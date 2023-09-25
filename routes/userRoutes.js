@@ -8,15 +8,15 @@ const {
 } = require("../controllers/userController");
 const validateToken = require("../middleware/validate");
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.post("/register", registerUser);
+userRouter.post("/register", registerUser);
 
-router.post("/login", loginUser);
+userRouter.post("/login", loginUser);
 
-router.get("/current", validateToken, currentUser);
-router.post("/forgot", forgotPasswordHandler);
-router.patch("/reset/:token", resetPasswordHandler);
+userRouter.get("/current", validateToken, currentUser);
+userRouter.post("/forgot", forgotPasswordHandler);
+userRouter.patch("/reset/:token", resetPasswordHandler);
 // router.post
 
-module.exports = router;
+module.exports = userRouter;

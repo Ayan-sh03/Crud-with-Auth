@@ -7,7 +7,7 @@ const transporter = require("./transporter.js");
 
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
-  if (!username || !password || !password) {
+  if (!username || !password || !email) {
     res.status(400);
     throw new Error("All fields are mandatory");
   }
@@ -101,9 +101,6 @@ const forgotPasswordHandler = asyncHandler(async (req, res) => {
       console.error(error);
       return res.status(500).json({ message: "Email sending failed" });
     }
-
-
-    
 
     res.status(200).json({ message: "Password reset email sent successfully" });
   });

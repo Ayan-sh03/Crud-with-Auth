@@ -4,6 +4,7 @@ const likeSchema = mongoose.Schema(
   {
     likes: {
       type: Number,
+      default: 0,
     },
     post_id: {
       type: mongoose.Schema.Types.ObjectId,
